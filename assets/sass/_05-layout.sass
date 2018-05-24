@@ -1,0 +1,393 @@
+/*****************************/
+/*========= HEADER =========*/
+/***************************/
+.main-header
+	box-shadow: 0 0 5px rgba(#252525, 0.3)
+	position: relative
+	z-index: 10
+	.container
+		padding: 15px
+
+.logo
+	max-width: 190px
+
+[class*=col-]
+	+ttion
+
+
+
+
+
+
+
+
+
+/*========= NAV-BAR =========*/
+.toggle-nav
+	color: $base-color
+	width: 40px
+	height: 40px
+	font-size: 2em
+	cursor: pointer
+	margin-left: auto
+	border-radius: 3px
+	border: solid 1px currentColor
+	+flex($ai: center, $jc: center)
+
+.main-nav
+	display: none
+	width: 100%
+
+.first-level-nav
+	> li
+		font-size: 1.6em
+		> a
+			display: block
+			color: #525252
+			padding: 0.5em 0
+			&:hover
+				text-decoration: underline
+
+.account-btn
+	margin-top: 10px
+	width: 160px
+	font-size: 1.6em
+	color: $alt-color
+	line-height: 36px
+	text-align: center
+	border: 2px solid currentColor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********************************/
+/*========= MAIN-CONTENT =========*/
+/*********************************/
+
+/*== General-styles ==*/
+.hidden
+	&-xs
+		display: none
+
+.container
+	&.flex
+		+flex($ai: center)
+
+.step-marker
+	margin-top: 15px
+	span
+		display: inline-block
+		font-size: 1.5em
+	li
+		display: inline-block
+		background-color: #d8d8d8
+		width: 10px
+		height: 10px
+		margin: 10px 5px 0 0
+		border-radius: 50%
+		&.actual
+			width: 30px
+			border-radius: 15px
+
+$sectList: ('first' : $base-color, 'second' : $comp-color, 'third' : $alt-color)
+@each $sect, $color in $sectList
+	.#{$sect}-section-header
+		.step-marker
+			span
+				color: $color
+			li
+				&.actual
+					background-color: $color
+
+.form-control
+	margin: 30px 0
+	position: relative
+	+ttion
+	&.up
+		padding-top: 15px
+	label
+		font-size: 1.6em
+		font-weight: 100
+		position: absolute
+		left: 0
+		top: 50%
+		width: 100%
+		transform: translateY(-50%)
+		color: #525252
+		word-break: keep-all
+		+ttion
+		+flex($ai: center)
+		[class*=icon]
+			margin-right: 7px
+		&.up
+			font-size: 1.2em
+			top: 0
+			transform: translateY(0)
+		span
+			width: calc(100% - 35px)
+			white-space: nowrap
+	input
+		display: block
+		position: relative
+		z-index: 5
+		border: none
+		width: 100%
+		height: 30px
+		font-size: 1.3em
+		font-weight: 100
+		background-color: transparent
+		border-bottom: solid 1px #525252
+		&:invalid
+			box-shadow: none
+			border: none
+			border-bottom: solid 1px $alt-color
+		&.error
+			// box-shadow: 0 0 5px $alt-color
+			border-bottom: solid 2px $alt-color
+
+.submit-btn
+	height: 45px
+	width: 100%
+	max-width: 250px
+	border-radius: 25px
+	border: none
+	padding: 0 5px 0 15px
+	cursor: pointer
+	+flex($jc: space-between, $ai: center)
+	span
+		color: #FFFFFF
+		font-size: 1.6em
+	b
+		width: 35px
+		height: 35px
+		border-radius: 50%
+		background-color: #FFFFFF
+		font-size: 2.5em
+		+flex($ai: center, $jc: center)
+
+.sect-resume-data
+	padding: 1px 0
+
+.resume-data-header
+	h2
+		font-weight: 400
+		font-size: 2em
+		color: #525252
+		margin: 20px 0 40px
+		+flex($ai: center)
+		img
+			margin-left: 15px
+
+.resume-data-info
+	span
+		font-size: 1.4em
+		+flex($ai: center)
+		i
+			margin-right: 5px
+	p
+		margin: 3px 0 25px
+		font-weight: 100
+		color: #525252
+		font-size: 1.8em
+		word-break: break-word
+
+.sect-resume-data-edit
+		display: inline-block
+		font-size: 1.3em
+		margin-top: 20px
+		color: currentColor
+		padding: 5px 0
+
+[id$=sect]
+	background-color: #f9f9f9
+
+.disclaimer
+	display: inline-block
+	padding: 40px 0 30px
+	font-size: 1em
+	line-height: 1.3
+	font-weight: 100
+	color: #afafaf
+
+#first-sect .sect-resume-data,
+#second-sect,
+#second-sect .sect-resume-data,
+#third-sect
+	display: none
+/*== General-styles ==*/
+
+
+
+
+
+
+
+
+
+/*== First Section ==*/
+.first-section-header
+	h2
+		color: $base-color
+		font-weight: 500
+		font-size: 2.5em
+		span
+			font-size: 0.7em
+
+#first-sect
+	p
+		color: #525252
+		font-size: 1.8em
+		br
+			display: none
+	.form-control input,
+	.submit-btn b
+			color: $base-color
+	.submit-btn
+		background-color: $base-color
+	.sect-resume-data
+		color: $base-color
+/*== First Section ==*/
+
+
+
+
+
+
+
+
+
+/*== Second Section ==*/
+.second-section-header
+	h2
+		color: #525252
+		font-weight: 400
+		font-size: 2em
+		+flex($ai: flex-start)
+		img
+			width: 35px
+			margin-top: 5px
+		span
+			width: calc(100% - 35px)
+			padding-left: 15px
+
+#second-sect
+	.form-control label [class*=icon],
+	.form-control input,
+	.submit-btn b
+			color: $comp-color
+	.submit-btn
+		background-color: $comp-color
+	.sect-resume-data
+		color: $comp-color
+/*== Second Section ==*/
+
+
+
+
+
+
+
+
+
+/*== Third Section ==*/
+.third-section-header
+	h2
+		color: #525252
+		font-weight: 400
+		font-size: 2em
+		+flex($ai: flex-start)
+		img
+			width: 35px
+			margin-top: 5px
+		span
+			width: calc(100% - 35px)
+			padding-left: 15px
+		b
+			font-weight: 500
+
+#third-sect
+	.submit-btn b
+			color: $alt-color
+	.submit-btn
+		background-color: $alt-color
+
+.aval-box
+	background-color: #FFFFFF
+	border-radius: 5px
+	padding: 10px 15px
+	margin: 30px 0
+	border-left: solid 5px $alt-color
+	box-shadow: 0 0 5px rgba(#000, 0.3)
+	p
+		color: #525252
+		font-size: 1.4em
+	h3
+		color: #525252
+		font-size: 3em
+		font-weight: 500
+		margin: 20px 0
+
+.call-to-action
+	margin-top: 30px
+	font-size: 1.5em
+	line-height: 1.4
+	color: #525252
+/*== Second Section ==*/
+
+.shadow
+	box-shadow: 0 0 5px rgba(#000, 0.3)
+
+
+
+
+
+
+
+
+
+
+
+.wrap-top-btn
+	left: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	margin: auto
+	z-index: 100
+	position: fixed
+	max-width: $base-width * 1px
+	#btn-top
+		bottom: 0
+		left: 50%
+		width: 80px
+		display: none
+		font-size: 15px
+		line-height: 30px
+		color: $base-color
+		text-align: center
+		position: absolute
+		background-color: #FFFFFF
+		border-radius: 5px 5px 0 0
+		transform: translateX(-50%)
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+		&:hover
+			opacity: 0.8
+
+.sticky-anchor
+	display: block
+	width: 100%

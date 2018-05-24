@@ -1,0 +1,53 @@
+=clearfix($bool: 'false')
+	@if ($bool == 'true')
+		&::after
+			content: ''
+			display: block
+			clear: both
+	@else
+		&::after
+			content: none
+
+=flex($df: flex, $jc: flex-start, $ai: stretch, $fw: wrap, $fd: row)
+	display: $df
+	justify-content: $jc
+	align-items: $ai
+	flex-wrap: $fw
+	flex-direction: $fd
+
+=ttion($ttime: 300ms)
+	transition: $ttime
+
+=align-center($ejeX: -50%)
+	transform: translateX($ejeX)
+
+=scale-rotate($scale: 1, $rotate: 360deg)
+	transform: scale($scale) rotate($rotate)
+
+=rotate($rotate)
+	transform: rotate($rotate)
+
+=b-sh($h-off, $v-off, $blur, $sh-color)
+	box-shadow: $h-off $v-off $blur $sh-color
+
+=spin($spin: 360deg)
+	transform: rotate($spin)
+
+=scale($scale: 1)
+	transform: scale($scale)
+
+=d-ib
+	display: inline-block
+	vertical-align: middle
+
+=bg-img($bg-img: 'none', $bg-repeat: no-repeat, $bg-pos: 0 0)
+	$bg-path: '../images/'
+	background-image: url(#{$bg-path}#{$bg-img})
+	background-position: $bg-pos
+	background-repeat: $bg-repeat 
+	@content
+
+=appeareance($appeareance: none)
+	appearance: $appeareance
+	-moz-appearance: $appeareance
+	-webkit-appearance: $appeareance
