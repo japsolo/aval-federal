@@ -72,9 +72,17 @@ $('#first-sect-btn').click(() => {
 		for (let [key, dataInput] of firstSectionDataInputs.entries()) {
 			dataInput.text(firstSectionInputs[key].val());
 		}
-		$('#first-sect .sect-main-data').fadeOut(350);
-		$('#first-sect .sect-resume-data').fadeIn(350);
+		$('#first-sect .sect-main-data').hide();
+		$('#first-sect .sect-resume-data').fadeIn(250);
+		$('#second-sect').addClass('col-md-10');
 		$('#second-sect').fadeIn(550);
+
+		if (window.innerWidth < 990) {
+			setTimeout(() => {
+				$('#first-sect .resume-data-info').slideUp(350);
+				$('#first-sect .sect-resume-data-edit').slideUp(350);
+			}, 2000);
+		}
 
 		if (window.innerWidth >= 990) {
 			$('#first-sect').addClass('col-md-2');
@@ -137,9 +145,17 @@ $('#second-sect-btn').click(() => {
 		for (let [key, dataInput] of secondSectionDataInputs.entries()) {
 			dataInput.text(`$ ${secondSectionInputs[key].val()}`);
 		}
-		$('#second-sect .sect-main-data').fadeOut(350);
-		$('#second-sect .sect-resume-data').fadeIn(350);
-		$('#third-sect').slideDown(550);
+		$('#second-sect .sect-main-data').hide();
+		$('#second-sect .sect-resume-data').fadeIn(250);
+		$('#third-sect').addClass('col-md-8');
+		$('#third-sect').fadeIn(550);
+
+		if (window.innerWidth < 990) {
+			setTimeout(() => {
+				$('#second-sect .resume-data-info').slideUp(350);
+				$('#second-sect .sect-resume-data-edit').slideUp(350);
+			}, 2000);
+		}
 
 		if (window.innerWidth >= 990) {
 			$('#second-sect').addClass('col-md-2');
@@ -161,5 +177,26 @@ $('#btn-edit-data-2nd-sect').click(e => {
 		$('#second-sect').removeClass('col-md-2');
 		$('#second-sect .sect-main-data').show();
 		$('#second-sect .sect-resume-data, #third-sect').hide();
+	}
+});
+
+$('#third-sect-btn').click(() => {
+	$('#third-sect, #second-sect, #first-sect').hide();
+	$('#fourth-sect').fadeIn(200);
+	$('input[name=finalDataRS]').val($('input[name=userName]').val().trim());
+	$('input[name=finalDataEmail]').val($('input[name=userEmail]').val().trim());
+	$('input[name=finalDataCuit]').val($('input[name=userCuit]').val().trim());
+});
+
+$('#fourth-sect-btn').click(() => {
+	$('#fourth-sect').hide();
+	$('#fifth-sect').fadeIn(350);
+});
+
+$('.resume-data-header').click(function () {
+	if (window.innerWidth < 990) {
+		let theParent = $(this).parent();
+		$('.resume-data-info', theParent).slideToggle(350);
+		$('.sect-resume-data-edit', theParent).slideToggle(350);
 	}
 });

@@ -12,7 +12,7 @@
 	max-width: 190px
 
 [class*=col-]
-	+ttion
+	+ttion(150)
 
 
 
@@ -80,6 +80,9 @@
 /*********************************/
 
 /*== General-styles ==*/
+.shadow
+	box-shadow: 0 0 5px rgba(#000, 0.3)
+
 .hidden
 	&-xs
 		display: none
@@ -152,6 +155,7 @@ $sectList: ('first' : $base-color, 'second' : $comp-color, 'third' : $alt-color)
 		font-weight: 100
 		background-color: transparent
 		border-bottom: solid 1px #525252
+		+appeareance
 		&:invalid
 			box-shadow: none
 			border: none
@@ -163,7 +167,7 @@ $sectList: ('first' : $base-color, 'second' : $comp-color, 'third' : $alt-color)
 .submit-btn
 	height: 45px
 	width: 100%
-	max-width: 250px
+	max-width: 220px
 	border-radius: 25px
 	border: none
 	padding: 0 5px 0 15px
@@ -180,20 +184,27 @@ $sectList: ('first' : $base-color, 'second' : $comp-color, 'third' : $alt-color)
 		font-size: 2.5em
 		+flex($ai: center, $jc: center)
 
-.sect-resume-data
-	padding: 1px 0
-
 .resume-data-header
+	background-color: $base-color
+	padding: 15px
+	margin: 0 -15px
+	&.second-step
+		background-color: $comp-color
 	h2
 		font-weight: 400
 		font-size: 2em
-		color: #525252
-		margin: 20px 0 40px
+		color: #FFF
+		margin: 0
 		+flex($ai: center)
-		img
-			margin-left: 15px
+		svg
+			width: 15px
+			margin-left: 10px
+		i
+			margin-left: auto
+			margin-right: 5px
 
 .resume-data-info
+	margin-top: 30px
 	span
 		font-size: 1.4em
 		+flex($ai: center)
@@ -227,7 +238,9 @@ $sectList: ('first' : $base-color, 'second' : $comp-color, 'third' : $alt-color)
 #first-sect .sect-resume-data,
 #second-sect,
 #second-sect .sect-resume-data,
-#third-sect
+#third-sect,
+#fourth-sect,
+#fifth-sect
 	display: none
 /*== General-styles ==*/
 
@@ -349,8 +362,28 @@ $sectList: ('first' : $base-color, 'second' : $comp-color, 'third' : $alt-color)
 	color: #525252
 /*== Second Section ==*/
 
-.shadow
-	box-shadow: 0 0 5px rgba(#000, 0.3)
+
+
+
+
+
+
+
+
+/*== Fourth Section ==*/
+#fourth-sect
+	p
+		font-size: 1.8em
+		color: #525252
+		br
+			display: none
+	.form-control
+		input
+			color: $base-color
+			font-size: 1.5em
+	.submit-btn
+		background-color: #535253
+/*== Fourth Section ==*/
 
 
 
@@ -360,34 +393,22 @@ $sectList: ('first' : $base-color, 'second' : $comp-color, 'third' : $alt-color)
 
 
 
+/*== Fifth Section ==*/
+#fifth-sect
+	height: calc(100vh - 80px)
 
-
-.wrap-top-btn
-	left: 0
-	right: 0
-	bottom: 0
-	width: 100%
-	margin: auto
-	z-index: 100
-	position: fixed
-	max-width: $base-width * 1px
-	#btn-top
-		bottom: 0
-		left: 50%
-		width: 80px
-		display: none
-		font-size: 15px
-		line-height: 30px
-		color: $base-color
+.thanks-wrap
+	padding: 50px 0
+	+flex($jc: center)
+	figure
+		width: 100%
 		text-align: center
-		position: absolute
-		background-color: #FFFFFF
-		border-radius: 5px 5px 0 0
-		transform: translateX(-50%)
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
-		&:hover
-			opacity: 0.8
-
-.sticky-anchor
-	display: block
-	width: 100%
+		img
+			max-width: 400px
+	p
+		order: -1
+		margin: 0 0 30px
+		font-size: 2.5em
+		color: #525252
+		text-align: center
+/*== Fifth Section ==*/
