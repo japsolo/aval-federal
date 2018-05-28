@@ -73,14 +73,14 @@ $('#first-sect-btn').click(() => {
 			dataInput.text(firstSectionInputs[key].val());
 		}
 		$('#first-sect .sect-main-data').hide();
-		$('#first-sect .sect-resume-data').fadeIn(250);
+		$('#first-sect .sect-resume-data').fadeIn(450);
 		$('#second-sect').addClass('col-md-10');
-		$('#second-sect').fadeIn(550);
+		$('#second-sect').fadeIn(650);
 
 		if (window.innerWidth < 990) {
 			setTimeout(() => {
-				$('#first-sect .resume-data-info').slideUp(350);
-				$('#first-sect .sect-resume-data-edit').slideUp(350);
+				$('#first-sect .resume-data-info').slideUp(450);
+				$('#first-sect .sect-resume-data-edit').slideUp(450);
 			}, 2000);
 		}
 
@@ -99,8 +99,8 @@ $('#first-sect-btn').click(() => {
 
 $('#btn-edit-data-1st-sect').click(e => {
 	e.preventDefault();
-	$('#first-sect .sect-main-data').fadeIn(350);
-	$('#first-sect .sect-resume-data').fadeOut(350);
+	$('#first-sect .sect-main-data').fadeIn(450);
+	$('#first-sect .sect-resume-data').fadeOut(450);
 	if (window.innerWidth >= 990) {
 		$('#first-sect').removeClass('col-md-2');
 		$('#first-sect .sect-main-data').show();
@@ -146,14 +146,14 @@ $('#second-sect-btn').click(() => {
 			dataInput.text(`$ ${secondSectionInputs[key].val()}`);
 		}
 		$('#second-sect .sect-main-data').hide();
-		$('#second-sect .sect-resume-data').fadeIn(250);
+		$('#second-sect .sect-resume-data').fadeIn(450);
 		$('#third-sect').addClass('col-md-8');
-		$('#third-sect').fadeIn(550);
+		$('#third-sect').fadeIn(650);
 
 		if (window.innerWidth < 990) {
 			setTimeout(() => {
-				$('#second-sect .resume-data-info').slideUp(350);
-				$('#second-sect .sect-resume-data-edit').slideUp(350);
+				$('#second-sect .resume-data-info').slideUp(450);
+				$('#second-sect .sect-resume-data-edit').slideUp(450);
 			}, 2000);
 		}
 
@@ -171,8 +171,8 @@ $('#second-sect-btn').click(() => {
 
 $('#btn-edit-data-2nd-sect').click(e => {
 	e.preventDefault();
-	$('#second-sect .sect-main-data').fadeIn(350);
-	$('#second-sect .sect-resume-data').fadeOut(350);
+	$('#second-sect .sect-main-data').fadeIn(450);
+	$('#second-sect .sect-resume-data').fadeOut(450);
 	if (window.innerWidth >= 990) {
 		$('#second-sect').removeClass('col-md-2');
 		$('#second-sect .sect-main-data').show();
@@ -182,7 +182,7 @@ $('#btn-edit-data-2nd-sect').click(e => {
 
 $('#third-sect-btn').click(() => {
 	$('#third-sect, #second-sect, #first-sect').hide();
-	$('#fourth-sect').fadeIn(200);
+	$('#fourth-sect').fadeIn(400);
 	$('input[name=finalDataRS]').val($('input[name=userName]').val().trim());
 	$('input[name=finalDataEmail]').val($('input[name=userEmail]').val().trim());
 	$('input[name=finalDataCuit]').val($('input[name=userCuit]').val().trim());
@@ -190,13 +190,13 @@ $('#third-sect-btn').click(() => {
 
 $('#fourth-sect-btn').click(() => {
 	$('#fourth-sect').hide();
-	$('#fifth-sect').fadeIn(350);
+	$('#fifth-sect').fadeIn(450);
 });
 
 $('.resume-data-header').click(function () {
 	if (window.innerWidth < 990) {
 		let theParent = $(this).parent();
-		$('.resume-data-info', theParent).slideToggle(350);
-		$('.sect-resume-data-edit', theParent).slideToggle(350);
+		$('.resume-data-info', theParent).slideToggle(450);
+		$('.sect-resume-data-edit', theParent).slideToggle(450);
 	}
 });

@@ -470,6 +470,8 @@ body {
     font-weight: 100;
     background-color: transparent;
     border-bottom: solid 1px #525252;
+    border-radius: 0;
+    outline: none;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none; }
@@ -659,7 +661,7 @@ body {
   background-color: #FFFFFF;
   border-radius: 5px;
   padding: 10px 15px;
-  margin: 30px 0;
+  margin: 20px 0;
   border-left: solid 5px #FC6666;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
   .aval-box p {
