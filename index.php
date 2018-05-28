@@ -150,24 +150,29 @@
 								<div class="form-control">
 									<label><i class="icon ion-md-help-circle"></i><span>Activo total</span></label>
 									<input form="full-data" type="text" name="totalActive" autocomplete="totalActive">
+									<span class="tooltip">Ver este dato en Estado de Situación Patrimonial del último ejercicio. Ingrese el Activo Total (Suma del Activo Corriente y No Corriente).</span>
 								</div>
 								<div class="form-control">
 									<label><i class="icon ion-md-help-circle"></i><span>Pasivo total</span></label>
 									<input form="full-data" type="text" name="totalPasive" autocomplete="totalPasive">
+									<span class="tooltip">Ver este dato en Estado de Situación Patrimonial del último ejercicio. Ingrese el Pasivo Total (Suma del Pasivo Corriente y No Corriente).</span>
 								</div>
 								<div class="form-control">
 									<label><i class="icon ion-md-help-circle"></i><span>Facturación bruta anual</span></label>
 									<input form="full-data" type="text" name="totalAnualBilling" autocomplete="totalAnualBilling">
+									<span class="tooltip">Ver este dato en Estado de resultado del último ejercicio rubro ventas. Si no cuenta con este dato, ponga cero (0).</span>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-control">
 									<label><i class="icon ion-md-help-circle"></i><span>Impuesto de ganancias pagado</span></label>
 									<input form="full-data" type="text" name="incomeTaxPaid" autocomplete="incomeTaxPaid">
+									<span class="tooltip">Ingrese monto que se abona por dicho impuesto. Dicha información puede ser extraída del Estado de Resultado del último ejercicio, Estado de Evolución del Patrimonio Neto o bien de la Declaración Jurada de Impuesto a las Ganancias (último periodo fiscal).</span>
 								</div>
 								<div class="form-control">
 									<label><i class="icon ion-md-help-circle"></i><span>Resultado del ultimo ejercicio</span></label>
 									<input form="full-data" type="text" name="lastExerciseResult" autocomplete="lastExerciseResult">
+									<span class="tooltip">Ver Resultado neto/final en Estado de Resultados del último ejercicio.</span>
 								</div>
 								<button type="button" class="submit-btn" id="second-sect-btn">
 									<span>Continuar</span>

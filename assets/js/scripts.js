@@ -41,6 +41,26 @@ $('.form-control input:not([type=file])').blur(function () {
 		$('label', theParent).removeClass('up');
 		theParent.removeClass('up');
 	}
+	$('.tooltip', theParent).fadeOut(450);
+});
+
+$('.form-control label').click(function () {
+	let theParent = $(this).parent();
+	if ($('input', theParent).val() === '') {
+		$('input', theParent).focus();
+		$(this).addClass('up');
+		theParent.addClass('up');
+	}
+});
+
+$('.form-control label i').click(function () {
+	let theParent = $(this).parent().parent();
+	$('.tooltip').fadeOut(450);
+	if ($('.tooltip', theParent).is(':hidden')) {
+		$('.tooltip', theParent).fadeIn(450);
+	} else {
+		$('.tooltip', theParent).fadeOut(450);
+	}
 });
 
 // First Section Input Validation
